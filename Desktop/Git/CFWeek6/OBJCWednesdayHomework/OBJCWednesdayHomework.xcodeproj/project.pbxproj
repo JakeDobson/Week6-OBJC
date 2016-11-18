@@ -16,6 +16,7 @@
 		7C306E001DDDA81D00451A9F /* OBJCWednesdayHomeworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C306DFF1DDDA81D00451A9F /* OBJCWednesdayHomeworkTests.m */; };
 		7C306E0B1DDDA81D00451A9F /* OBJCWednesdayHomeworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C306E0A1DDDA81D00451A9F /* OBJCWednesdayHomeworkUITests.m */; };
 		7C306E1A1DDE20C000451A9F /* StudentStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C306E191DDE20C000451A9F /* StudentStore.m */; };
+		7C306E1D1DDF431800451A9F /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C306E1C1DDF431800451A9F /* Student.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		7C306E0C1DDDA81D00451A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C306E181DDE20C000451A9F /* StudentStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentStore.h; sourceTree = "<group>"; };
 		7C306E191DDE20C000451A9F /* StudentStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentStore.m; sourceTree = "<group>"; };
+		7C306E1B1DDF431800451A9F /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		7C306E1C1DDF431800451A9F /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +109,13 @@
 			children = (
 				7C306DE81DDDA81D00451A9F /* AppDelegate.h */,
 				7C306DE91DDDA81D00451A9F /* AppDelegate.m */,
+				7C306E1B1DDF431800451A9F /* Student.h */,
+				7C306E1C1DDF431800451A9F /* Student.m */,
+				7C306E181DDE20C000451A9F /* StudentStore.h */,
+				7C306E191DDE20C000451A9F /* StudentStore.m */,
 				7C306DEB1DDDA81D00451A9F /* ViewController.h */,
 				7C306DEC1DDDA81D00451A9F /* ViewController.m */,
 				7C306DEE1DDDA81D00451A9F /* Main.storyboard */,
-				7C306E181DDE20C000451A9F /* StudentStore.h */,
-				7C306E191DDE20C000451A9F /* StudentStore.m */,
 				7C306DF11DDDA81D00451A9F /* Assets.xcassets */,
 				7C306DF31DDDA81D00451A9F /* LaunchScreen.storyboard */,
 				7C306DF61DDDA81D00451A9F /* Info.plist */,
@@ -283,6 +288,7 @@
 			files = (
 				7C306DED1DDDA81D00451A9F /* ViewController.m in Sources */,
 				7C306E1A1DDE20C000451A9F /* StudentStore.m in Sources */,
+				7C306E1D1DDF431800451A9F /* Student.m in Sources */,
 				7C306DEA1DDDA81D00451A9F /* AppDelegate.m in Sources */,
 				7C306DE71DDDA81D00451A9F /* main.m in Sources */,
 			);

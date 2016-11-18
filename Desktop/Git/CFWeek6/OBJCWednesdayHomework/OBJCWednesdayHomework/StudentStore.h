@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Student.h"
 
 @interface StudentStore : NSObject
+
+//singleton
++(instancetype)shared;
+
+-(NSInteger)count;
+-(NSArray *)allStudents;
+
+-(void)add:(Student*)student;
+-(void)remove:(Student*)student;
+-(void)save;
 
 @end

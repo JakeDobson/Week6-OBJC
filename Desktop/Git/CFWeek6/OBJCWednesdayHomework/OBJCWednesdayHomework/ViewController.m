@@ -11,9 +11,7 @@
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-//@property (weak, nonatomic) NSArray *allStudents
-
+//@property (weak, nonatomic) NSArray *allStudents;
 
 @end
 
@@ -26,35 +24,43 @@
     self.tableView.dataSource = self;
     self.tableView.estimatedRowHeight = 75;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-
-    NSLog(@"%@", allStudents);
-
-    //create a new student to save
-    //Student *newStudent [[Student alloc]initWithFirstName:@"Jake" lastName:@"Dobson"
-
-    //[[Student Store
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    NSArray *allStudents = [[StudentStore shared] allStudents];
+    NSLog(@"Students array: %@", allStudents);
+
+    //create new students to save
+    Student *Jake = [[Student alloc]initWithFirstName:@"Jake" lastName:@"Dobson" email:@"jake.dobson@gmail.com" phone:@"815-557-0928"];
+    [[StudentStore shared] add:Jake];
+    
+    Student *Jordan = [[Student alloc]initWithFirstName:@"Joradn" lastName:@"Dobson" email:@"joradndobson@gmail.com" phone:@"425-444-8014"];
+    [[StudentStore shared] add:Jordan];
+    
+    Student *Josh = [[Student alloc]initWithFirstName:@"Josh" lastName:@"Dobson" email:@"josh.dobson@gmail.com" phone:@"206-235-8673"];
+    [[StudentStore shared] add:Josh];
+    
+    Student *Jenna = [[Student alloc]initWithFirstName:@"Jenna" lastName:@"Dobson" email:@"jenna.dobson@gmail.com" phone:@"815-806-1220"];
+    [[StudentStore shared] add:Jenna];
+    
+    Student *James = [[Student alloc]initWithFirstName:@"James" lastName:@"Dobson" email:@"james.dobson@gmail.com" phone:@"815-715-1590"];
+    [[StudentStore shared] add:James];
+}
+
+
+//MARK: TableViewDataSource Methods...
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[[StudentStore shared]allStudents]count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     //dequeue cell
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    //allStudents array
-    //    NSArray *allStudents = [[StudentStore shared]allStudents];
-    //Student *currentStudent = allStudents[indexPath.row];
-    //cell.textLabel.text = currentStudent.firstName;
+    Student *currentStudent = [[[StudentStore shared]allStudents]objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Name: %@ %@", [currentStudent firstName], [currentStudent lastName]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Email: %@ Phone: %@", [currentStudent email], [currentStudent phone]];
     
     return cell;
-
 }
 
 @end
