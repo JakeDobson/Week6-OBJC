@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "StudentStore.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+//@property (weak, nonatomic) NSArray *allStudents
+
 
 @end
 
@@ -16,7 +21,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.estimatedRowHeight = 75;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
+    NSLog(@"%@", allStudents);
+
+    //create a new student to save
+    //Student *newStudent [[Student alloc]initWithFirstName:@"Jake" lastName:@"Dobson"
+
+    //[[Student Store
 }
 
 
@@ -25,5 +41,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    //dequeue cell
+    
+    //allStudents array
+    //    NSArray *allStudents = [[StudentStore shared]allStudents];
+    //Student *currentStudent = allStudents[indexPath.row];
+    //cell.textLabel.text = currentStudent.firstName;
+    
+    return cell;
+
+}
 
 @end
